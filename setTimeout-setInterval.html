@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="counter">0</div>
+    <br></br>
+    <button onclick="stopCounting()">stop counting</button>
+    <button onclick="clearTimeout(delayMessage)">Don't show Message</button>
+    <script>
+        let counterEl= document.querySelector("#counter");
+        let counter = 0;
+        let counterInterval = setInterval(function(){
+            counter++;
+            counterEl.innerHTML = counter;
+        },1000);
+
+        let delayedMessage = setTimeout(function(){
+            alert("Welcome to iur site!");
+        },3000);
+
+        function stopCounting(){
+            clearInterval(counterInterval);
+        }
+    </script>
+</body>
+</html>
